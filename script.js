@@ -10,9 +10,9 @@ fruits[2] = "orange";
 // Create an array named numbers with the following values: 2, 4, 6, 8, 10.
 // Add the number 12 to the end of the numbers array.
 // Remove the first element from the array.
-const numbers = [ 2, 4, 6, 8, 10];
-numbers.push(12);
-numbers.shift();
+// const numbers = [ 2, 4, 6, 8, 10];
+// numbers.push(12);
+// numbers.shift();
 // console.log(numbers);
 
 
@@ -84,13 +84,34 @@ const checker = (arr)=>{
 // Create an array named numbers with the following values: 3, 7, 1, 9, 4.
 // Write a function that squares each element of the numbers array and returns a new array with the squared values.
 
+const numbers = [3, 7, 1, 9, 4];
+const squared = (num)=> {
+    let newArray = [];
+    num.forEach((e)=>{
+        e*=2;
+        newArray.push(e);
+    });
+    // console.log(newArray);
+};
+// squared(numbers);
+
 
 
 //8- Array Sorting - Ascending Order:
 // Create an array named grades with the following values: 87, 95, 76, 88, 92.
 // Write a function that sorts the grades array in ascending order and returns the sorted array.
+const grades = [87, 95, 76, 88, 92];
 
+const sorthingInAscending = (arr)=>{
+    let sortedArray = [];
+    arr.forEach((e)=>{
+        // console.log(e);
+        sortedArray.push(e);
+    });
 
+};
+
+sorthingInAscending(grades);
 
 
 
