@@ -102,16 +102,14 @@ const squared = (num)=> {
 // Write a function that sorts the grades array in ascending order and returns the sorted array.
 const grades = [87, 95, 76, 88, 92];
 
-const sorthingInAscending = (arr)=>{
-    let sortedArray = [];
-    arr.forEach((e)=>{
-        // console.log(e);
-        sortedArray.push(e);
+function sortGrades(arr) {
+    return arr.slice().sort((a, b)=> {
+        return a - b;
     });
-
 };
 
-sorthingInAscending(grades);
+const sortedGrades = sortGrades(grades);
+// console.log(sortedGrades);
 
 
 
@@ -122,7 +120,7 @@ sorthingInAscending(grades);
 //10- Array Reduction - Maximum Value:
 // Create an array named values with the following values: 34, 12, 78, 53, 90.
 // Write a function that finds and returns the maximum value in the values array.
- 
+
 
 //=============================================================================================== OBJECTS============================================================================
 
