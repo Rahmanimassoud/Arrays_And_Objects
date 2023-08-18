@@ -117,6 +117,24 @@ const sortedGrades = sortGrades(grades);
 // Create an array named data with the following values: 10, 20, 30, 40, 50.
 // Write a function that doubles each element of the data array and returns a new array with the doubled values.
 
+const data = [10, 20, 30, 40, 50];
+const doubledValues = (arr)=>{
+    const doubled = arr.map((e)=> {
+        return e*=2
+    });
+    // console.log(doubled);
+
+};
+// doubledValues(data);
+
+// we can also rewrite this like so.
+
+// const doubled = arr.map(e => e*2); in one line.
+
+
+
+
+
 //10- Array Reduction - Maximum Value:
 // Create an array named values with the following values: 34, 12, 78, 53, 90.
 // Write a function that finds and returns the maximum value in the values array.
