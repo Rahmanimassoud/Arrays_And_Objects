@@ -126,57 +126,63 @@ const doubledValues = (arr)=>{
 
 };
 // doubledValues(data);
-
 // we can also rewrite this like so.
-
 // const doubled = arr.map(e => e*2); in one line.
-
-
-
 
 
 //10- Array Reduction - Maximum Value:
 // Create an array named values with the following values: 34, 12, 78, 53, 90.
 // Write a function that finds and returns the maximum value in the values array.
+const values = [34, 12, 100, 78, 53, 90];
 
+const findMaxVal = (arr)=>{
+    let max = 0;
+    arr.forEach((e)=>{
+        if(e > max){
+            max = e
+        }
+        return max;
+    })
+    // console.log(max);
+};
+// findMaxVal(values);
+// we can also use the built in Math.max() method to find the maximum value in an array. combain it with the spread operator.
+// Math.max(...values).
+// ===================EXAMPLE===========
+// const max = Math.max(...values);
+//console.log(max);
 
 //=============================================================================================== OBJECTS============================================================================
 
-// Copy this object with it’s nested object
+let movie = {
 
-// let movie = {
+    name: "Titanic",
 
-//     name: "Titanic",
+    releaseYear: 1997,
 
-//     releaseYear: 1997,
+    director: "James Cameron",
 
-//     director: "James Cameron",
+    actors: ["Leonardo Dicaprio", "Kate Winslet", "Billy Zane", "Kathy Bates"],
 
-//     actors: ["Leonardo Dicaprio", "Kate Winslet", "Billy Zane", "Kathy Bates"],
+    starActor: {
 
-//     starActor: {
+        name: "Leonardo Dicaprio",
 
-//         name: "Leonardo Dicaprio",
+        age: 5,
 
-//         age: 5,
+        born: 1889,
 
-//         born: 1889,
+        linkToAwards: "https://en.wikipedia.org/wiki/List_of_awards_and_nominations_received_by_Leonardo_DiCaprio",
 
-//         linkToAwards: "https://en.wikipedia.org/wiki/List_of_awards_and_nominations_received_by_Leonardo_DiCaprio",
+        headshotLink: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Leonardo_DiCaprio_2014.jpg/220px-Leonardo_DiCaprio_2014.jpg"
 
-//         headshotLink: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Leonardo_DiCaprio_2014.jpg/220px-Leonardo_DiCaprio_2014.jpg"
+    },
 
-//     },
+    budgetInMillions: 200
 
-//     budgetInMillions: 200
-
-// }
-
- 
+}
 
 // Try to make functions that do the following: 
-
- 
 
 // Access the star actor’s age property  and change the value to 48.
 // Access the star actor’s born property and change the value to 1989.
@@ -184,44 +190,109 @@ const doubledValues = (arr)=>{
 // Add a new property to the movie object called isGoodMovie with a value of undefined.
 // Access the actors array, loop through it and check if the movie has “Tom Cruise” in it. If true, set isGoodMovie to true, else set isGoodMovie to false.
 
+// const replacingObject = (movie)=>{
+//     movie.starActor.age = 48;
+//     movie.starActor.born = 1984;
+//     movie.starActor.isPopular = true;
+//     movie.isGoodMovie = undefined;
+//     movie.actors.push("Tom Cruise")
 
-
-// let cohortFour = {
-
-//     classSize: 5,
-
-//     instructor: {
-
-//         name: "Fred",
-
-//         age: 40,
-
-//         completedCohortIds: [3, 77, 45, 23],
-
-//         email: "fred@fred.com",
-
-//         assistant: {
-
-//             name: "Brad",
-
-//             age: 38,
-
-//             email: "Brad@brad.com"
-
+//     for(let i = 0; i<movie.actors.length; i++){
+//         if(movie.actors[i].includes("Tom Cruise")) {
+//             movie.isGoodMovie = true;
+//         } else {
+//             movie.isGoodMovie = false;
 //         }
+//     }
+// };
+// replacingObject(movie);
+// console.log(movie);
 
-//     },
+let cohortFour = {
 
-//     classGrades: [99, 100, 89, 88, 95]
+    classSize: 5,
 
-// }
+    instructor: {
 
- 
+        name: "Fred",
+
+        age: 40,
+
+        completedCohortIds: [3, 77, 45, 23],
+
+        email: "fred@fred.com",
+
+        assistant: {
+
+            name: "Brad",
+
+            age: 38,
+
+            email: "Brad@brad.com"
+
+        }
+
+    },
+
+    classGrades: [99, 100, 89, 88, 95]
+
+}
 
 // Try to make functions that do the following: 
-
 // Check if the class size is > 10
 // Check if the instructor has completed more than 2 cohorts.
 // Create a function called changeAssistant that will change the name, age, and email of the assistant
 // Loop through the completedCohortIds array and check if Fred completed cohort 55
 // Loop through the classGrades and check if the average grade is > 90
+
+const cohortF = (cohortFour)=> {
+
+    if(cohortFour.classSize > 10){
+        console.log("Class Size is indeed greater than 10");
+    } else {
+        console.log("Class Size is les than 10");
+    }
+    if(cohortFour.instructor.completedCohortIds.length > 2){
+        console.log("This instructor completed more than 2 cohorts");
+    };
+    const changeAssistant = ()=>{
+        cohortFour.instructor.assistant.age = 20;
+        cohortFour.instructor.assistant.name = "Massoud";
+        cohortFour.instructor.assistant.email = "Massoud@Per_Scholas.com";
+    };
+    changeAssistant();
+
+    let completedCohort55 = false;
+
+    for(let i = 0; i < cohortFour.instructor.completedCohortIds.length; i++){
+        if(cohortFour.instructor.completedCohortIds[i] === 55){
+            completedCohort55 = true;
+            break;
+        }
+    };
+    if (completedCohort55){
+        console.log("Instructor " + cohortFour.instructor.name + "Has completed cohort 55");
+    } else {
+        console.log(cohortFour.instructor.name + " Has not completed cohort 55");
+    };
+    
+    const findAverageGrade = (num) =>{
+
+        let sum = 0;
+        let average;
+        if(num.length === 0){
+            return 0; //making sure the array is not an empty array.
+        };
+
+        for(let i = 0; i<num.length; i++){
+            sum += num[i];
+        };
+        average = sum / num.length;
+        if(average > 90){
+            console.log("Average score in this cohort is above 90%");
+        }
+    };
+    findAverageGrade (cohortFour.classGrades);
+};
+cohortF(cohortFour);
+console.log(cohortFour);
